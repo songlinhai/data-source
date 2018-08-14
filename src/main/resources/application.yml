@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    bicap:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      initialize: true #指定初始化数据源，是否用data.sql来初始化，默认: true
+      name: bicap
+      url: jdbc:mysql://mysql.web.zz:3306/bicap?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+      username: zzyq
+      password: 1qaz2WSX!@
+    train:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      initialize: true
+      name: train
+      url: jdbc:mysql://10.253.50.250:3306/train?useUnicode=true&characterEncoding=utf-8&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
+      username: zzyq
+      password: 1qaz2WSX!@
+server:
+  port: 8088
+  tomcat:
+    max-threads: 1000
+    max-connections: 2000
+    accept-count: 1000
+    uri-encoding: utf-8
+logging:
+  level.com.slh: info
+  file: data-source.log
